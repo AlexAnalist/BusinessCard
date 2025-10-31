@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Indica que se esta configurando la parte grafica de la pantalla y que se ajuste al ancho del dispositivo iniciando con un zoom del 100%-->
+        <title>Alejandra Patiño - Business configurando</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;500&display=swap');
+            
+            /* Fondo base tipo espacio*/
+            body{
+                height: 100vh; /* altura completa de la pantalla */
+                display: flex;
+                justify-content: center; /* centra horizontalmente */
+                align-items: center;     /* centra verticalmente */
+                margin: 0;
+                background: linear-gradient(270deg, #ff00ff, #00ffff, #8a2be2, #ff1493);
+                background-size: 800% 800%;
+                animation: gradientMove 15s ease infinite;
+            }
+
+            @keyframes gradientMove {
+              0% { background-position: 0% 50%; }
+              50% { background-position: 100% 50%; }
+              100% { background-position: 0% 50%; }
+            }
+           
+
+            .card {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: rgba(20, 10, 40, 0.8);
+                border: 2px solid #ff00cc;
+                border-radius: 20px;
+                padding: 2rem;
+                width: 340px;
+                box-shadow: 0 0 25px #ff00cc88, 0 0 60px #00ffff33;
+                backdrop-filter: blur(6px);
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+            }
+
+            .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 0 40px #ff00ff, 0 0 80px #00ffff77;
+            }
+
+            .avatar {
+                width: 110px;
+                height: 110px;
+                border-radius: 50%;
+                background: conic-gradient(from 180deg, #ff00ff, #00ffff, #ff00ff);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 0 20px #00ffffaa;
+                margin-bottom: 1rem;
+                padding: 4px; /* Espacio para el borde interno */
+            }
+
+            .avatar-img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover; /* Esto es clave para que la imagen se ajuste al círculo */
+                border: 2px solid #00ffff;
+            }
+
+            .info {
+                text-align: center;
+                color: #fff;
+            }
+
+            .info h2{
+                font-family: "Orbitron", sans-serif;
+                margin: 0;
+                font-size: 1.3rem;
+                color: #00ffff;
+                text-shadow: 0 0 10px #00ffff;
+            }
+
+            .info p{
+                margin: 6px 0;
+                font-size: 0.9rem;
+                color: #ffccff;
+            }
+
+            .frase{
+                font-style: italic;
+                color: #ff00cc;
+                font-size: 0.8rem;
+                margin-top: 0.5rem;
+            }
+
+            .redes {
+                z-index: 1;
+                display: flex;
+                gap: 25px;
+                margin-top: 1.2rem;
+                position: relative;
+            }
+
+            .redes a {
+                position: relative;
+                font-size: 1.5rem;
+                color: #00ffff;
+                text-decoration: none;
+                transition: color 0.3s ease, text-shadow 0.3s ease;
+            }
+
+            .redes a:hover{
+                color: #ff00ff; 
+                text-shadow: 0 0 10px #ff00ff;
+            }
+
+            .redes a::after{
+                content: attr(data-label); 
+                position: absolute;
+                bottom: -30px;
+                left: 50%;
+                transform: translateX(-50%) scale(0);
+                background: rgba(20, 10, 40, 0.8);
+                color: #00ffff;
+                font-size: 0.75rem;
+                padding: 4px 10px;
+                border-radius: 10px;
+                white-space: nowrap;
+                opacity: 0;
+                transition: all 0.3s ease;
+                font-family: "Orbitrion", sans-serif;
+                box-shadow: 0 0 10px #00ffff66;
+            }
+
+            .redes a:hover::after{
+                transform: translateX(-50%) scale(1);
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!--Tarjeta-->
+        <div class="card">
+            <div class="avatar">
+                <img src="foto.jpg" alt="Foto de Alejandra Patiño" class="avatar-img">
+            </div>
+            <div class="info">
+                <h2>Alejandra Patiño</h2>
+                <p>Back-End Developer | QA Automation Tester</p>
+                <p>📍 San Cristóbal, Venezuela</p>
+                <div class="frase">"May the force be with you"</div>
+            </div>
+           <div class="redes">
+            <a href="mailto:alejandra.patino.tech@gmail.com" data-label="Email">✉️</a>
+            <a href="https://linkedin.com/in/alejandra-pati%C3%B1o-903776360" data-label="Linkedin">🔗</a>
+            <a href="https://github.com/AlexAnalist" data-label="GitHub">💻</a>
+           </div>
+        </div>
+    </body>
+
+</html>
